@@ -1,0 +1,306 @@
+{
+  "address": "0xe0522895a4fdc1779b36d16b806a0dbe44376057",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "EmptyArray",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "IndexOutOfBounds",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NoOraclesAvailable",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "OnlyOwner",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "oracleAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "oracleOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OracleAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "oracleAddress",
+          "type": "address"
+        }
+      ],
+      "name": "OracleRemoved",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "STALE_DATA_WINDOW",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "addOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getActiveOracleNodes",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "oracles",
+      "outputs": [
+        {
+          "internalType": "contract SimpleOracle",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "removeOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "contractName": "WhitelistOracle",
+  "sourceName": "contracts/00_Whitelist/WhitelistOracle.sol",
+  "bytecode": "0x6080604052348015600e575f5ffd5b505f80546001600160a01b03191633179055610ce48061002d5f395ff3fe608060405234801561000f575f5ffd5b506004361061007a575f3560e01c8063977e792311610058578063977e7923146100d557806398d5fdca146100eb578063df5dd1a5146100f3578063fb152f8c14610106575f5ffd5b80635b69a7d81461007e57806380935dbf146100ae5780638da5cb5b146100c3575b5f5ffd5b61009161008c36600461094d565b61011b565b6040516001600160a01b0390911681526020015b60405180910390f35b6100c16100bc36600461094d565b610143565b005b5f54610091906001600160a01b031681565b6100dd601881565b6040519081526020016100a5565b6100dd61028f565b6100c1610101366004610964565b6104af565b61010e61056e565b6040516100a5919061098a565b6001818154811061012a575f80fd5b5f918252602090912001546001600160a01b0316905081565b600154811061016557604051634e23d03560e01b815260040160405180910390fd5b5f60018281548110610179576101796109d5565b5f91825260209091200154600180546001600160a01b03909216925061019e916109fd565b821461021a57600180546101b39082906109fd565b815481106101c3576101c36109d5565b5f91825260209091200154600180546001600160a01b0390921691849081106101ee576101ee6109d5565b905f5260205f20015f6101000a8154816001600160a01b0302191690836001600160a01b031602179055505b600180548061022b5761022b610a16565b5f8281526020908190205f19908301810180546001600160a01b03191690559091019091556040516001600160a01b03831681527f9c8e7d83025bef8a04c664b2f753f64b8814bdb7e27291d7e50935f18cc3c71291015b60405180910390a15050565b6001545f9081036102b35760405163d9aad26b60e01b815260040160405180910390fd5b6001545f9067ffffffffffffffff8111156102d0576102d0610a2a565b6040519080825280602002602001820160405280156102f9578160200160208202803683370190505b5090505f805b6001548110156103e4575f5f6001838154811061031e5761031e6109d5565b905f5260205f20015f9054906101000a90046001600160a01b03166001600160a01b03166398d5fdca6040518163ffffffff1660e01b81526004016040805180830381865afa158015610373573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906103979190610a3e565b909250905060186103a882426109fd565b10156103da57818585815181106103c1576103c16109d5565b6020908102919091010152836103d681610a60565b9450505b50506001016102ff565b50805f036104055760405163d9aad26b60e01b815260040160405180910390fd5b5f8167ffffffffffffffff81111561041f5761041f610a2a565b604051908082528060200260200182016040528015610448578160200160208202803683370190505b5090505f5b8281101561049457838181518110610467576104676109d5565b6020026020010151828281518110610481576104816109d5565b602090810291909101015260010161044d565b5061049e8161077e565b6104a78161086d565b935050505090565b5f816040516104bd90610940565b6001600160a01b039091168152602001604051809103905ff0801580156104e6573d5f5f3e3d5ffd5b506001805480820182555f919091527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf60180546001600160a01b0319166001600160a01b038381169182179092556040805191825291851660208201529192507f828d2be040dede7698182e08dfa8bfbd663c879aee772509c4a2bd961d0ed43f9101610283565b6001546060905f9067ffffffffffffffff81111561058e5761058e610a2a565b6040519080825280602002602001820160405280156105b7578160200160208202803683370190505b5090505f805b6001548110156106d9575f600182815481106105db576105db6109d5565b905f5260205f20015f9054906101000a90046001600160a01b03166001600160a01b03166398d5fdca6040518163ffffffff1660e01b81526004016040805180830381865afa158015610630573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906106549190610a3e565b91506018905061066482426109fd565b10156106d0576001828154811061067d5761067d6109d5565b905f5260205f20015f9054906101000a90046001600160a01b03168484815181106106aa576106aa6109d5565b6001600160a01b0390921660209283029190910190910152826106cc81610a60565b9350505b506001016105bd565b505f8167ffffffffffffffff8111156106f4576106f4610a2a565b60405190808252806020026020018201604052801561071d578160200160208202803683370190505b5090505f5b828110156107765783818151811061073c5761073c6109d5565b6020026020010151828281518110610756576107566109d5565b6001600160a01b0390921660209283029190910190910152600101610722565b509392505050565b80515f5b8181101561086857805f610797826001610a78565b90505b838110156107e8578482815181106107b4576107b46109d5565b60200260200101518582815181106107ce576107ce6109d5565b602002602001015110156107e0578091505b60010161079a565b5081811461085f57838181518110610802576108026109d5565b602002602001015184838151811061081c5761081c6109d5565b6020026020010151858481518110610836576108366109d5565b6020026020010186848151811061084f5761084f6109d5565b6020908102919091010191909152525b50600101610782565b505050565b80515f908082036108915760405163521299a960e01b815260040160405180910390fd5b61089c600282610a9f565b5f03610914576002836108af8284610ab2565b815181106108bf576108bf6109d5565b60200260200101518460016002856108d79190610ab2565b6108e191906109fd565b815181106108f1576108f16109d5565b60200260200101516109039190610a78565b61090d9190610ab2565b9392505050565b82610920600283610ab2565b81518110610930576109306109d5565b6020026020010151915050919050565b6101e980610ac683390190565b5f6020828403121561095d575f5ffd5b5035919050565b5f60208284031215610974575f5ffd5b81356001600160a01b038116811461090d575f5ffd5b602080825282518282018190525f918401906040840190835b818110156109ca5783516001600160a01b03168352602093840193909201916001016109a3565b509095945050505050565b634e487b7160e01b5f52603260045260245ffd5b634e487b7160e01b5f52601160045260245ffd5b81810381811115610a1057610a106109e9565b92915050565b634e487b7160e01b5f52603160045260245ffd5b634e487b7160e01b5f52604160045260245ffd5b5f5f60408385031215610a4f575f5ffd5b505080516020909101519092909150565b5f60018201610a7157610a716109e9565b5060010190565b80820180821115610a1057610a106109e9565b634e487b7160e01b5f52601260045260245ffd5b5f82610aad57610aad610a8b565b500690565b5f82610ac057610ac0610a8b565b50049056fe6080604052348015600e575f5ffd5b506040516101e93803806101e9833981016040819052602b91604f565b600280546001600160a01b0319166001600160a01b0392909216919091179055607a565b5f60208284031215605e575f5ffd5b81516001600160a01b03811681146073575f5ffd5b9392505050565b610162806100875f395ff3fe608060405234801561000f575f5ffd5b5060043610610055575f3560e01c80638da5cb5b1461005957806391b7f5ed1461008957806398d5fdca1461009e578063a035b1fe146100b8578063b80777ea146100ce575b5f5ffd5b60025461006c906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b61009c610097366004610115565b6100d7565b005b5f5460015460408051928352602083019190915201610080565b6100c05f5481565b604051908152602001610080565b6100c060015481565b5f819055426001556040518181527f66cbca4f3c64fecf1dcb9ce094abcf7f68c3450a1d4e3a8e917dd621edb4ebe09060200160405180910390a150565b5f60208284031215610125575f5ffd5b503591905056fea2646970667358221220a2c0758894679395bba69eda479004788609ea1ef8f997be6b1fc7794978702d64736f6c634300081e0033a2646970667358221220b0e41187f5267ee4abe6100d044adbee7491ecbdad85fd961e01d2bb67ad4e5364736f6c634300081e0033",
+  "deployedBytecode": "0x608060405234801561000f575f5ffd5b506004361061007a575f3560e01c8063977e792311610058578063977e7923146100d557806398d5fdca146100eb578063df5dd1a5146100f3578063fb152f8c14610106575f5ffd5b80635b69a7d81461007e57806380935dbf146100ae5780638da5cb5b146100c3575b5f5ffd5b61009161008c36600461094d565b61011b565b6040516001600160a01b0390911681526020015b60405180910390f35b6100c16100bc36600461094d565b610143565b005b5f54610091906001600160a01b031681565b6100dd601881565b6040519081526020016100a5565b6100dd61028f565b6100c1610101366004610964565b6104af565b61010e61056e565b6040516100a5919061098a565b6001818154811061012a575f80fd5b5f918252602090912001546001600160a01b0316905081565b600154811061016557604051634e23d03560e01b815260040160405180910390fd5b5f60018281548110610179576101796109d5565b5f91825260209091200154600180546001600160a01b03909216925061019e916109fd565b821461021a57600180546101b39082906109fd565b815481106101c3576101c36109d5565b5f91825260209091200154600180546001600160a01b0390921691849081106101ee576101ee6109d5565b905f5260205f20015f6101000a8154816001600160a01b0302191690836001600160a01b031602179055505b600180548061022b5761022b610a16565b5f8281526020908190205f19908301810180546001600160a01b03191690559091019091556040516001600160a01b03831681527f9c8e7d83025bef8a04c664b2f753f64b8814bdb7e27291d7e50935f18cc3c71291015b60405180910390a15050565b6001545f9081036102b35760405163d9aad26b60e01b815260040160405180910390fd5b6001545f9067ffffffffffffffff8111156102d0576102d0610a2a565b6040519080825280602002602001820160405280156102f9578160200160208202803683370190505b5090505f805b6001548110156103e4575f5f6001838154811061031e5761031e6109d5565b905f5260205f20015f9054906101000a90046001600160a01b03166001600160a01b03166398d5fdca6040518163ffffffff1660e01b81526004016040805180830381865afa158015610373573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906103979190610a3e565b909250905060186103a882426109fd565b10156103da57818585815181106103c1576103c16109d5565b6020908102919091010152836103d681610a60565b9450505b50506001016102ff565b50805f036104055760405163d9aad26b60e01b815260040160405180910390fd5b5f8167ffffffffffffffff81111561041f5761041f610a2a565b604051908082528060200260200182016040528015610448578160200160208202803683370190505b5090505f5b8281101561049457838181518110610467576104676109d5565b6020026020010151828281518110610481576104816109d5565b602090810291909101015260010161044d565b5061049e8161077e565b6104a78161086d565b935050505090565b5f816040516104bd90610940565b6001600160a01b039091168152602001604051809103905ff0801580156104e6573d5f5f3e3d5ffd5b506001805480820182555f919091527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf60180546001600160a01b0319166001600160a01b038381169182179092556040805191825291851660208201529192507f828d2be040dede7698182e08dfa8bfbd663c879aee772509c4a2bd961d0ed43f9101610283565b6001546060905f9067ffffffffffffffff81111561058e5761058e610a2a565b6040519080825280602002602001820160405280156105b7578160200160208202803683370190505b5090505f805b6001548110156106d9575f600182815481106105db576105db6109d5565b905f5260205f20015f9054906101000a90046001600160a01b03166001600160a01b03166398d5fdca6040518163ffffffff1660e01b81526004016040805180830381865afa158015610630573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906106549190610a3e565b91506018905061066482426109fd565b10156106d0576001828154811061067d5761067d6109d5565b905f5260205f20015f9054906101000a90046001600160a01b03168484815181106106aa576106aa6109d5565b6001600160a01b0390921660209283029190910190910152826106cc81610a60565b9350505b506001016105bd565b505f8167ffffffffffffffff8111156106f4576106f4610a2a565b60405190808252806020026020018201604052801561071d578160200160208202803683370190505b5090505f5b828110156107765783818151811061073c5761073c6109d5565b6020026020010151828281518110610756576107566109d5565b6001600160a01b0390921660209283029190910190910152600101610722565b509392505050565b80515f5b8181101561086857805f610797826001610a78565b90505b838110156107e8578482815181106107b4576107b46109d5565b60200260200101518582815181106107ce576107ce6109d5565b602002602001015110156107e0578091505b60010161079a565b5081811461085f57838181518110610802576108026109d5565b602002602001015184838151811061081c5761081c6109d5565b6020026020010151858481518110610836576108366109d5565b6020026020010186848151811061084f5761084f6109d5565b6020908102919091010191909152525b50600101610782565b505050565b80515f908082036108915760405163521299a960e01b815260040160405180910390fd5b61089c600282610a9f565b5f03610914576002836108af8284610ab2565b815181106108bf576108bf6109d5565b60200260200101518460016002856108d79190610ab2565b6108e191906109fd565b815181106108f1576108f16109d5565b60200260200101516109039190610a78565b61090d9190610ab2565b9392505050565b82610920600283610ab2565b81518110610930576109306109d5565b6020026020010151915050919050565b6101e980610ac683390190565b5f6020828403121561095d575f5ffd5b5035919050565b5f60208284031215610974575f5ffd5b81356001600160a01b038116811461090d575f5ffd5b602080825282518282018190525f918401906040840190835b818110156109ca5783516001600160a01b03168352602093840193909201916001016109a3565b509095945050505050565b634e487b7160e01b5f52603260045260245ffd5b634e487b7160e01b5f52601160045260245ffd5b81810381811115610a1057610a106109e9565b92915050565b634e487b7160e01b5f52603160045260245ffd5b634e487b7160e01b5f52604160045260245ffd5b5f5f60408385031215610a4f575f5ffd5b505080516020909101519092909150565b5f60018201610a7157610a716109e9565b5060010190565b80820180821115610a1057610a106109e9565b634e487b7160e01b5f52601260045260245ffd5b5f82610aad57610aad610a8b565b500690565b5f82610ac057610ac0610a8b565b50049056fe6080604052348015600e575f5ffd5b506040516101e93803806101e9833981016040819052602b91604f565b600280546001600160a01b0319166001600160a01b0392909216919091179055607a565b5f60208284031215605e575f5ffd5b81516001600160a01b03811681146073575f5ffd5b9392505050565b610162806100875f395ff3fe608060405234801561000f575f5ffd5b5060043610610055575f3560e01c80638da5cb5b1461005957806391b7f5ed1461008957806398d5fdca1461009e578063a035b1fe146100b8578063b80777ea146100ce575b5f5ffd5b60025461006c906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b61009c610097366004610115565b6100d7565b005b5f5460015460408051928352602083019190915201610080565b6100c05f5481565b604051908152602001610080565b6100c060015481565b5f819055426001556040518181527f66cbca4f3c64fecf1dcb9ce094abcf7f68c3450a1d4e3a8e917dd621edb4ebe09060200160405180910390a150565b5f60208284031215610125575f5ffd5b503591905056fea2646970667358221220a2c0758894679395bba69eda479004788609ea1ef8f997be6b1fc7794978702d64736f6c634300081e0033a2646970667358221220b0e41187f5267ee4abe6100d044adbee7491ecbdad85fd961e01d2bb67ad4e5364736f6c634300081e0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "immutableReferences": {},
+  "inputSourceName": "project/contracts/00_Whitelist/WhitelistOracle.sol",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "addOracle(address)": {
+        "details": "Creates a new SimpleOracle instance and adds it to the oracles array.",
+        "params": {
+          "_owner": "The address that will own the newly created oracle and can update its price"
+        }
+      },
+      "getActiveOracleNodes()": {
+        "details": "Iterates through all oracles and filters those with recent timestamps (within STALE_DATA_WINDOW).      Uses a temporary array to collect active nodes, then creates a right-sized return array      for gas optimization.",
+        "returns": {
+          "_0": "An array of addresses representing the currently active oracle contracts"
+        }
+      },
+      "getPrice()": {
+        "details": "Filters oracles with timestamps older than STALE_DATA_WINDOW, then calculates median      of remaining valid prices. Uses StatisticsUtils for sorting and median calculation.",
+        "returns": {
+          "_0": "The median price from all active oracles"
+        }
+      },
+      "removeOracle(uint256)": {
+        "details": "Uses swap-and-pop pattern for gas-efficient removal. Order is not preserved.      Reverts with IndexOutOfBounds, if the provided index is >= oracles.length.",
+        "params": {
+          "index": "The index of the oracle to remove from the oracles array"
+        }
+      }
+    },
+    "version": 1
+  },
+  "evm": {
+    "gasEstimates": {
+      "creation": {
+        "codeDepositCost": "660000",
+        "executionCost": "24928",
+        "totalCost": "684928"
+      },
+      "external": {
+        "STALE_DATA_WINDOW()": "194",
+        "addOracle(address)": "infinite",
+        "getActiveOracleNodes()": "infinite",
+        "getPrice()": "infinite",
+        "oracles(uint256)": "4601",
+        "owner()": "2369",
+        "removeOracle(uint256)": "infinite"
+      }
+    }
+  },
+  "metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"EmptyArray\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"IndexOutOfBounds\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NoOraclesAvailable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OnlyOwner\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oracleAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oracleOwner\",\"type\":\"address\"}],\"name\":\"OracleAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oracleAddress\",\"type\":\"address\"}],\"name\":\"OracleRemoved\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"STALE_DATA_WINDOW\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"addOracle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getActiveOracleNodes\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"oracles\",\"outputs\":[{\"internalType\":\"contract SimpleOracle\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"removeOracle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"addOracle(address)\":{\"details\":\"Creates a new SimpleOracle instance and adds it to the oracles array.\",\"params\":{\"_owner\":\"The address that will own the newly created oracle and can update its price\"}},\"getActiveOracleNodes()\":{\"details\":\"Iterates through all oracles and filters those with recent timestamps (within STALE_DATA_WINDOW).      Uses a temporary array to collect active nodes, then creates a right-sized return array      for gas optimization.\",\"returns\":{\"_0\":\"An array of addresses representing the currently active oracle contracts\"}},\"getPrice()\":{\"details\":\"Filters oracles with timestamps older than STALE_DATA_WINDOW, then calculates median      of remaining valid prices. Uses StatisticsUtils for sorting and median calculation.\",\"returns\":{\"_0\":\"The median price from all active oracles\"}},\"removeOracle(uint256)\":{\"details\":\"Uses swap-and-pop pattern for gas-efficient removal. Order is not preserved.      Reverts with IndexOutOfBounds, if the provided index is >= oracles.length.\",\"params\":{\"index\":\"The index of the oracle to remove from the oracles array\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"EmptyArray()\":[{\"notice\":\"Errors //////\"}],\"OnlyOwner()\":[{\"notice\":\"Errors //////\"}]},\"events\":{\"OracleAdded(address,address)\":{\"notice\":\"Events /////\"}},\"kind\":\"user\",\"methods\":{\"addOracle(address)\":{\"notice\":\"Adds a new oracle to the whitelist by deploying a SimpleOracle contract (only contract owner)\"},\"constructor\":{\"notice\":\"Constructor ///\"},\"getActiveOracleNodes()\":{\"notice\":\"Returns the addresses of all oracles that have updated their price within the last STALE_DATA_WINDOW\"},\"getPrice()\":{\"notice\":\"Returns the aggregated price from all active oracles using median calculation\"},\"owner()\":{\"notice\":\"State Variables //\"},\"removeOracle(uint256)\":{\"notice\":\"Removes an oracle from the whitelist by its array index (only contract owner)\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project/contracts/00_Whitelist/WhitelistOracle.sol\":\"WhitelistOracle\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\"project/:@openzeppelin/contracts/=npm/@openzeppelin/contracts@5.7.0/\"]},\"sources\":{\"project/contracts/00_Whitelist/SimpleOracle.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\r\\npragma solidity >=0.8.0 <0.9.0;\\r\\n\\r\\ncontract SimpleOracle {\\r\\n    /////////////////\\r\\n    /// Errors //////\\r\\n    /////////////////\\r\\n\\r\\n    error OnlyOwner();\\r\\n\\r\\n    //////////////////////\\r\\n    /// State Variables //\\r\\n    //////////////////////\\r\\n\\r\\n    uint256 public price;\\r\\n    uint256 public timestamp;\\r\\n    address public owner;\\r\\n\\r\\n    ////////////////\\r\\n    /// Events /////\\r\\n    ////////////////\\r\\n\\r\\n    event PriceUpdated(uint256 newPrice);\\r\\n\\r\\n    ///////////////////\\r\\n    /// Constructor ///\\r\\n    ///////////////////\\r\\n\\r\\n    constructor(address _owner) {\\r\\n        owner = _owner;\\r\\n    }\\r\\n\\r\\n    ///////////////////\\r\\n    /// Modifiers /////\\r\\n    ///////////////////\\r\\n\\r\\n    /**\\r\\n     * @notice Modifier to restrict function access to the contract owner\\r\\n     * @dev Currently disabled to make it easy for you to impersonate the owner\\r\\n     */\\r\\n    modifier onlyOwner() {\\r\\n        // Intentionally removing the owner requirement to make it easy for you to impersonate the owner\\r\\n        // if (msg.sender != owner) revert OnlyOwner();\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    ///////////////////\\r\\n    /// Functions /////\\r\\n    ///////////////////\\r\\n\\r\\n    /**\\r\\n     * @notice Updates the oracle price with a new value (only contract owner)\\r\\n     * @dev Sets the price and records the current block timestamp for freshness tracking.\\r\\n     *      Emits PriceUpdated event upon successful update.\\r\\n     * @param _newPrice The new price value to set for this oracle\\r\\n     */\\r\\n    function setPrice(uint256 _newPrice) public onlyOwner {\\r\\n        price = _newPrice;\\r\\n        timestamp = block.timestamp;\\r\\n        emit PriceUpdated(_newPrice);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns the current price and its timestamp\\r\\n     * @dev Provides both the stored price value and when it was last updated.\\r\\n     *      Used by aggregators to determine price freshness.\\r\\n     * @return price The current price stored in this oracle\\r\\n     * @return timestamp The block timestamp when the price was last updated\\r\\n     */\\r\\n    function getPrice() public view returns (uint256, uint256) {\\r\\n        return (price, timestamp);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x08ed5a4527de6a2433fddea0ff099b330fe6be8cea2110f921569821fd5b6964\",\"license\":\"MIT\"},\"project/contracts/00_Whitelist/WhitelistOracle.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\r\\npragma solidity >=0.8.0 <0.9.0;\\r\\n\\r\\nimport \\\"./SimpleOracle.sol\\\";\\r\\nimport { StatisticsUtils } from \\\"../utils/StatisticsUtils.sol\\\";\\r\\n\\r\\ncontract WhitelistOracle {\\r\\n    using StatisticsUtils for uint256[];\\r\\n\\r\\n    /////////////////\\r\\n    /// Errors //////\\r\\n    /////////////////\\r\\n\\r\\n    error OnlyOwner();\\r\\n    error IndexOutOfBounds();\\r\\n    error NoOraclesAvailable();\\r\\n\\r\\n    //////////////////////\\r\\n    /// State Variables //\\r\\n    //////////////////////\\r\\n\\r\\n    address public owner;\\r\\n    SimpleOracle[] public oracles;\\r\\n    uint256 public constant STALE_DATA_WINDOW = 24 seconds;\\r\\n\\r\\n    ////////////////\\r\\n    /// Events /////\\r\\n    ////////////////\\r\\n\\r\\n    event OracleAdded(address oracleAddress, address oracleOwner);\\r\\n    event OracleRemoved(address oracleAddress);\\r\\n\\r\\n    ///////////////////\\r\\n    /// Modifiers /////\\r\\n    ///////////////////\\r\\n\\r\\n    /**\\r\\n     * @notice Modifier to restrict function access to the contract owner\\r\\n     * @dev Currently disabled to make it easy for you to impersonate the owner\\r\\n     */\\r\\n    modifier onlyOwner() {\\r\\n        // if (msg.sender != owner) revert OnlyOwner();\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    ///////////////////\\r\\n    /// Constructor ///\\r\\n    ///////////////////\\r\\n\\r\\n    constructor() {\\r\\n        owner = msg.sender;\\r\\n    }\\r\\n\\r\\n    ///////////////////\\r\\n    /// Functions /////\\r\\n    ///////////////////\\r\\n\\r\\n    /**\\r\\n     * @notice Adds a new oracle to the whitelist by deploying a SimpleOracle contract (only contract owner)\\r\\n     * @dev Creates a new SimpleOracle instance and adds it to the oracles array.\\r\\n     * @param _owner The address that will own the newly created oracle and can update its price\\r\\n     */\\r\\n    function addOracle(address _owner) public onlyOwner {\\n        SimpleOracle newOracle = new SimpleOracle(_owner);\\n        oracles.push(newOracle);\\n        emit OracleAdded(address(newOracle), _owner);\\n    }\\n\\r\\n    /**\\r\\n     * @notice Removes an oracle from the whitelist by its array index (only contract owner)\\r\\n     * @dev Uses swap-and-pop pattern for gas-efficient removal. Order is not preserved.\\r\\n     *      Reverts with IndexOutOfBounds, if the provided index is >= oracles.length.\\r\\n     * @param index The index of the oracle to remove from the oracles array\\r\\n     */\\r\\n    function removeOracle(uint256 index) public onlyOwner {\\n        if (index >= oracles.length) revert IndexOutOfBounds();\\n\\n        address oracleAddress = address(oracles[index]);\\n        if (index != oracles.length - 1) {\\n            oracles[index] = oracles[oracles.length - 1];\\n        }\\n        oracles.pop();\\n\\n        emit OracleRemoved(oracleAddress);\\n    }\\n\\r\\n    /**\\r\\n     * @notice Returns the aggregated price from all active oracles using median calculation\\r\\n     * @dev Filters oracles with timestamps older than STALE_DATA_WINDOW, then calculates median\\r\\n     *      of remaining valid prices. Uses StatisticsUtils for sorting and median calculation.\\r\\n     * @return The median price from all active oracles\\r\\n     */\\r\\n    function getPrice() public view returns (uint256) {\\n        if (oracles.length == 0) revert NoOraclesAvailable();\\n\\n        uint256[] memory prices = new uint256[](oracles.length);\\n        uint256 validCount;\\n\\n        for (uint256 i = 0; i < oracles.length; i++) {\\n            (uint256 price, uint256 timestamp) = oracles[i].getPrice();\\n            if (block.timestamp - timestamp < STALE_DATA_WINDOW) {\\n                prices[validCount] = price;\\n                validCount++;\\n            }\\n        }\\n\\n        if (validCount == 0) revert NoOraclesAvailable();\\n\\n        uint256[] memory validPrices = new uint256[](validCount);\\n        for (uint256 i = 0; i < validCount; i++) {\\n            validPrices[i] = prices[i];\\n        }\\n\\n        validPrices.sort();\\n        return validPrices.getMedian();\\n    }\\n\\r\\n    /**\\r\\n     * @notice Returns the addresses of all oracles that have updated their price within the last STALE_DATA_WINDOW\\r\\n     * @dev Iterates through all oracles and filters those with recent timestamps (within STALE_DATA_WINDOW).\\r\\n     *      Uses a temporary array to collect active nodes, then creates a right-sized return array\\r\\n     *      for gas optimization.\\r\\n     * @return An array of addresses representing the currently active oracle contracts\\r\\n     */\\r\\n    function getActiveOracleNodes() public view returns (address[] memory) {\\n        address[] memory tempNodes = new address[](oracles.length);\\n        uint256 count;\\n\\n        for (uint256 i = 0; i < oracles.length; i++) {\\n            (, uint256 timestamp) = oracles[i].getPrice();\\n            if (block.timestamp - timestamp < STALE_DATA_WINDOW) {\\n                tempNodes[count] = address(oracles[i]);\\n                count++;\\n            }\\n        }\\n\\n        address[] memory activeNodes = new address[](count);\\n        for (uint256 i = 0; i < count; i++) {\\n            activeNodes[i] = tempNodes[i];\\n        }\\n\\n        return activeNodes;\\n    }\\n}\\n\",\"keccak256\":\"0x37e0bf7b0c0b104cd3eeb1474c2ee9dea0e8de866959bdb10f12673098d7a7e4\",\"license\":\"MIT\"},\"project/contracts/utils/StatisticsUtils.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity >=0.8.0 <0.9.0;\\r\\n\\r\\nlibrary StatisticsUtils {\\r\\n    /////////////////\\r\\n    /// Errors //////\\r\\n    /////////////////\\r\\n\\r\\n    error EmptyArray();\\r\\n\\r\\n    ///////////////////\\r\\n    /// Functions /////\\r\\n    ///////////////////\\r\\n\\r\\n    /**\\r\\n     * @notice Sorts an array of uint256 values in ascending order using selection sort\\r\\n     * @dev Uses selection sort algorithm which is not gas-efficient but acceptable for small arrays.\\r\\n     *      This implementation mimics the early MakerDAO Medianizer exactly.\\r\\n     *      Modifies the input array in-place.\\r\\n     * @param arr The array of uint256 values to sort in ascending order\\r\\n     */\\r\\n    function sort(uint256[] memory arr) internal pure {\\r\\n        uint256 n = arr.length;\\r\\n        for (uint256 i = 0; i < n; i++) {\\r\\n            uint256 minIndex = i;\\r\\n            for (uint256 j = i + 1; j < n; j++) {\\r\\n                if (arr[j] < arr[minIndex]) {\\r\\n                    minIndex = j;\\r\\n                }\\r\\n            }\\r\\n            if (minIndex != i) {\\r\\n                (arr[i], arr[minIndex]) = (arr[minIndex], arr[i]);\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Calculates the median value from a sorted array of uint256 values\\r\\n     * @dev For arrays with even length, returns the average of the two middle elements.\\r\\n     *      For arrays with odd length, returns the middle element.\\r\\n     *      Assumes the input array is already sorted in ascending order.\\r\\n     * @param arr The sorted array of uint256 values to calculate median from\\r\\n     * @return The median value as a uint256\\r\\n     */\\r\\n    function getMedian(uint256[] memory arr) internal pure returns (uint256) {\\r\\n        uint256 length = arr.length;\\r\\n        if (length == 0) revert EmptyArray();\\r\\n        if (length % 2 == 0) {\\r\\n            return (arr[length / 2 - 1] + arr[length / 2]) / 2;\\r\\n        } else {\\r\\n            return arr[length / 2];\\r\\n        }\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xfe5dcb13eda058bba7137056d1dce1906df6596d8c1edf4c450f73ea94c306c4\",\"license\":\"MIT\"}},\"version\":1}",
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 1021,
+        "contract": "project/contracts/00_Whitelist/WhitelistOracle.sol:WhitelistOracle",
+        "label": "owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 1025,
+        "contract": "project/contracts/00_Whitelist/WhitelistOracle.sol:WhitelistOracle",
+        "label": "oracles",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_contract(SimpleOracle)1002)dyn_storage"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_contract(SimpleOracle)1002)dyn_storage": {
+        "base": "t_contract(SimpleOracle)1002",
+        "encoding": "dynamic_array",
+        "label": "contract SimpleOracle[]",
+        "numberOfBytes": "32"
+      },
+      "t_contract(SimpleOracle)1002": {
+        "encoding": "inplace",
+        "label": "contract SimpleOracle",
+        "numberOfBytes": "20"
+      }
+    }
+  },
+  "userdoc": {
+    "errors": {
+      "EmptyArray()": [
+        {
+          "notice": "Errors //////"
+        }
+      ],
+      "OnlyOwner()": [
+        {
+          "notice": "Errors //////"
+        }
+      ]
+    },
+    "events": {
+      "OracleAdded(address,address)": {
+        "notice": "Events /////"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "addOracle(address)": {
+        "notice": "Adds a new oracle to the whitelist by deploying a SimpleOracle contract (only contract owner)"
+      },
+      "constructor": {
+        "notice": "Constructor ///"
+      },
+      "getActiveOracleNodes()": {
+        "notice": "Returns the addresses of all oracles that have updated their price within the last STALE_DATA_WINDOW"
+      },
+      "getPrice()": {
+        "notice": "Returns the aggregated price from all active oracles using median calculation"
+      },
+      "owner()": {
+        "notice": "State Variables //"
+      },
+      "removeOracle(uint256)": {
+        "notice": "Removes an oracle from the whitelist by its array index (only contract owner)"
+      }
+    },
+    "version": 1
+  },
+  "argsData": "0x",
+  "transaction": {
+    "hash": "0x843e13eaf5c9aa437e6898c61b91510ab778ad53b78bc5b2ec6a4c901b0d7d8b",
+    "nonce": "0x0",
+    "origin": "0x23184a19aa27424803f5808ff4b528eda070601e"
+  },
+  "receipt": {
+    "blockHash": "0x83b145cc5ede2cca229e870972128924adcddd747446546c143c2f14fc6f64d5",
+    "blockNumber": "0xb006c9",
+    "transactionIndex": "0x4e"
+  }
+}
